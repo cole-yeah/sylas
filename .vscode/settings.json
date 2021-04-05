@@ -1,0 +1,5 @@
+{
+  "files.exclude": {
+    "**/.git": false // 显示.git文件夹
+  }
+}
