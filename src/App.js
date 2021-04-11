@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { produce } from "immer";
-import { useEffect } from "react";
 
-const cloneDeep = (target) => {
+const cloneDeep = target => {
   return {
     ...target,
   };
 };
 
 function App() {
+  const [state, setState] = useState(0);
   useEffect(() => {
     const obj = {
       a: {
@@ -21,13 +21,25 @@ function App() {
       },
       c: 3,
     };
-    const newObj = produce(obj, (draft) => {
+    const newObj = produce(obj, draft => {
       draft.a.aa.aaa = 10;
     });
     console.log("----", newObj.a.aa, obj.a.aa, newObj.a.aa === obj.a.aa);
     console.log("--==--", newObj.b, obj.b, newObj.b === obj.b);
   }, []);
-  return <div className="App">321</div>;
+
+  const resetVal = () => setState(prevState => prevState + 1);
+
+  useEffect(() => {
+    console.log("--------", state);
+  }, []);
+
+  return (
+    <div className="App">
+      <div>{state}</div>
+      <div onClick={resetVal}>点击 +1</div>
+    </div>
+  );
 }
 
 export default App;

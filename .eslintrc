@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["react", "jsx-a11y", "prettier"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-unused-expressions": "warn",
+    "prettier/prettier": "warn"
+  }
+}
