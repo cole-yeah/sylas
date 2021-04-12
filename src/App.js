@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo, useCallback } from "react";
-import { produce } from "immer";
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import { produce } from 'immer';
 
 const cloneDeep = target => {
   return {
@@ -24,14 +24,14 @@ function App() {
     const newObj = produce(obj, draft => {
       draft.a.aa.aaa = 10;
     });
-    console.log("----", newObj.a.aa, obj.a.aa, newObj.a.aa === obj.a.aa);
-    console.log("--==--", newObj.b, obj.b, newObj.b === obj.b);
+    console.log('----', newObj.a.aa, obj.a.aa, newObj.a.aa === obj.a.aa);
+    console.log('--==--', newObj.b, obj.b, newObj.b === obj.b);
   }, []);
 
   const resetVal = () => setState(prevState => prevState + 1);
 
   useEffect(() => {
-    console.log("--------", state);
+    console.log('--------', state);
   }, []);
 
   return (
