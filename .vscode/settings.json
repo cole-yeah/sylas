@@ -1,5 +1,20 @@
 {
   "files.exclude": {
     "**/.git": false // 显示.git文件夹
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue", // 检测vue文件
+      "autoFix": true //  为vue文件开启保存自动修复的功能
+    },
+    {
+      "language": "react",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    }
+  ]
 }
