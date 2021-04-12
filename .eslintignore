@@ -1,2 +1,9 @@
 node_modules
-.eslintrc.js
+scripts
+public
+build
+dist
+.git
+.history
+.husky
+.vscode
