@@ -142,6 +142,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.13",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "babel-eslint": "^10.1.0",
