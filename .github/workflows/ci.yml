@@ -21,11 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
-      - name: Build & Deploy
+      - name: Install & Build
+        run: |
+          npm i
+          npm run build
+
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@master
         env: 
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: main
           FOLDER: build
-          BUILD_SCRIPT: npm i && npm run build
