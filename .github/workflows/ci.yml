@@ -23,6 +23,7 @@ jobs:
 
       - name: Install & Build
         run: |
+          npm -v
           npm install
           npm run build
 
