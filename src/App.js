@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { produce } from 'immer';
 
-const cloneDeep = target => {
-  return {
-    ...target,
-  };
-};
+// const cloneDeep = target => {
+//   return {
+//     ...target,
+//   };
+// };
 
 function App() {
   const [state, setState] = useState(0);
