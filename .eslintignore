@@ -1,9 +1,0 @@
-node_modules
-scripts
-public
-build
-dist
-.git
-.history
-.husky
-.vscode
