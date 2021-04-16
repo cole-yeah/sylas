@@ -2,6 +2,7 @@ node_modules
 scripts
 public
 build
+config
 dist
 .git
 .history

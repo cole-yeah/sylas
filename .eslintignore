@@ -3,6 +3,7 @@ scripts
 public
 build
 dist
+config
 .git
 .history
 .husky
