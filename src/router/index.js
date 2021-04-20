@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from '../lib/router';
-import Alg from '../pages/Alg';
-import Main from '../pages/Main';
+import { BrowserRouter, Switch, Route } from 'lib/router';
+import Alg from 'pages/Alg';
+import Main from 'pages/Main';
 
 const Router = ({ history }) => {
   return (

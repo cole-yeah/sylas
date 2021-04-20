@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { produce } from 'immer';
+import React, { useState } from 'react';
 import Router from './router';
-import { Link } from './lib/router';
 import history from './common/utils/history';
 
 // const cloneDeep = target => {
