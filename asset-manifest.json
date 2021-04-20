@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/sylas/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/sylas/static/js/main.3e5731a9.chunk.js",
-    "main.js.map": "/sylas/static/js/main.3e5731a9.chunk.js.map",
+    "main.js": "/sylas/static/js/main.f55b794e.chunk.js",
+    "main.js.map": "/sylas/static/js/main.f55b794e.chunk.js.map",
     "runtime-main.js": "/sylas/static/js/runtime-main.6c9ccf9f.js",
     "runtime-main.js.map": "/sylas/static/js/runtime-main.6c9ccf9f.js.map",
-    "static/js/2.e9d97dd4.chunk.js": "/sylas/static/js/2.e9d97dd4.chunk.js",
-    "static/js/2.e9d97dd4.chunk.js.map": "/sylas/static/js/2.e9d97dd4.chunk.js.map",
+    "static/js/2.b43e2b11.chunk.js": "/sylas/static/js/2.b43e2b11.chunk.js",
+    "static/js/2.b43e2b11.chunk.js.map": "/sylas/static/js/2.b43e2b11.chunk.js.map",
     "static/js/3.57c4b13a.chunk.js": "/sylas/static/js/3.57c4b13a.chunk.js",
     "static/js/3.57c4b13a.chunk.js.map": "/sylas/static/js/3.57c4b13a.chunk.js.map",
     "index.html": "/sylas/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/sylas/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.e9d97dd4.chunk.js.LICENSE.txt": "/sylas/static/js/2.e9d97dd4.chunk.js.LICENSE.txt"
+    "static/js/2.b43e2b11.chunk.js.LICENSE.txt": "/sylas/static/js/2.b43e2b11.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6c9ccf9f.js",
-    "static/js/2.e9d97dd4.chunk.js",
+    "static/js/2.b43e2b11.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.3e5731a9.chunk.js"
+    "static/js/main.f55b794e.chunk.js"
   ]
 }
