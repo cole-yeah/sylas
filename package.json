@@ -159,6 +159,7 @@
     "husky": "^6.0.0",
     "lint-staged": ">=10",
     "mrm": "^3.0.1",
+    "path-to-regexp": "^6.2.0",
     "prettier": "2.2.1",
     "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^4.0.0",

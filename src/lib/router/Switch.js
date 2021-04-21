@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouterContext } from './Router';
+import matchPath from './matchPath';
 
 // 根据url对组件进行匹配
 const Switch = props => {
@@ -12,7 +13,7 @@ const Switch = props => {
       if (!match && React.isValidElement(child)) {
         element = child;
         const path = child.props.path || child.props.from;
-        match = path === location.pathname;
+        match = matchPath(location.pathname, { ...child.props, path });
       }
     });
     return match
