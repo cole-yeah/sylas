@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext, useContext } from 'react';
 
 const RouterContext = createContext(null);
 
-const Router = ({ history, children }) => {
+const Router = ({ history, children, basename = '' }) => {
   const [location, setLocation] = useState(history.location);
   useEffect(() => {
     history.listen(curLocation => {
@@ -14,6 +14,7 @@ const Router = ({ history, children }) => {
       value={{
         history,
         location,
+        basename,
       }}
     >
       {children}

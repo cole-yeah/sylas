@@ -14,11 +14,12 @@ const LinkAnchor = ({ to, navigate, children }) => {
 };
 
 const Link = ({ to, children }) => {
-  const { history } = useRouterContext();
+  const { history, basename } = useRouterContext();
+  const curLink = `${basename}${to}`;
   const navigate = () => {
-    history.push(to);
+    history.push(curLink);
   };
-  return <LinkAnchor to={to} navigate={navigate} children={children} />;
+  return <LinkAnchor to={curLink} navigate={navigate} children={children} />;
 };
 
 export default Link;
