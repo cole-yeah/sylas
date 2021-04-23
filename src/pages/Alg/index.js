@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from '../../lib/router';
 import { produce } from 'lib/immer';
 
@@ -43,9 +43,10 @@ const createFlow = effects => {
 //   };
 // };
 
-var obj = { a: { aa: 1 }, b: 2 };
+var obj = { a: { aa: 1, aaa: { aaaa: 20 } }, b: 2 };
 
 const Alg = () => {
+  const [a, setA] = useState({});
   useEffect(() => {
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -64,16 +65,28 @@ const Alg = () => {
   }, []);
 
   useEffect(() => {
-    const newObj = produce(obj, draft => (draft.a.aa = 90));
+    const newObj = produce(obj, draft => {
+      draft.a.aaa.aaaa = 666;
+      draft.b = 36;
+    });
 
-    console.log('-----', obj, newObj, obj === newObj);
+    console.log('-----', obj.a.aaa.aaaa, obj, newObj, obj === newObj);
   }, []);
 
   // 需要按照 a,b,延迟1秒,c,延迟1秒,d,e, done 的顺序打印
 
+  const handleClick = () => {
+    const newObj = produce(obj, draft => {
+      draft.b = draft.b + 1;
+    });
+    setA(newObj);
+    console.log('xxxxxxxxxxxx', newObj, obj);
+  };
+
   return (
     <div>
       <Link to="/main">go to main page</Link>
+      <div onClick={() => handleClick()}>click me {a.b}</div>
     </div>
   );
 };
