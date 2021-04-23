@@ -1,13 +1,3 @@
-/**
- * base use
- * import { produce } from 'immer'
- * const [state, setState] = useState({a: { aa: 3 }, b: 2});
- * const newState = produce(state, (draft) => {
- *  draft.a.aa = 90
- * })
- * setState(newState)
- */
-
 const isObject = obj =>
   Object.prototype.toString.call(obj) === '[object Object]';
 
@@ -21,12 +11,19 @@ const createProxy = (target, opts) => new Proxy(target, opts);
 
 export const produce = (target, cb = () => {}) => {
   const copies = new Map(); // 存储修改的值
-  // TODO: 增加proxy缓存，减少重复创建proxy
+  const proxies = new Map(); // 缓存创建过的proxy实例
 
   const opts = {
     get(target, propKey) {
-      if (isObject(target[propKey])) return target[propKey];
-      return createProxy(target[propKey], opts);
+      const val = target[propKey];
+      // 非对象创建不了proxy实例
+      if (!isObject(val)) return val;
+      if (proxies.has(val)) {
+        return proxies.get(val);
+      }
+      const proxy = createProxy(val, opts);
+      proxies.set(val, proxy);
+      return proxy;
     },
     set(target, propKey, value) {
       const copy = shallowCopy(target);

@@ -9,18 +9,6 @@ import { produce } from 'lib/immer';
 //   };
 // };
 
-const obj = {
-  a: {
-    aa: {
-      aaa: 1,
-    },
-  },
-  b: {
-    bb: 2,
-  },
-  c: 3,
-};
-
 function App() {
   const [state, setState] = useState({
     a: {
