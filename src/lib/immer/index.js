@@ -8,6 +8,9 @@
  * setState(newState)
  */
 
+const isObject = obj =>
+  Object.prototype.toString.call(obj) === '[object Object]';
+
 // 浅拷贝
 const shallowCopy = data => {
   return Array.isArray(data) ? [...data] : { ...data };
@@ -22,6 +25,7 @@ export const produce = (target, cb = () => {}) => {
 
   const opts = {
     get(target, propKey) {
+      if (isObject(target[propKey])) return target[propKey];
       return createProxy(target[propKey], opts);
     },
     set(target, propKey, value) {
@@ -40,9 +44,8 @@ export const produce = (target, cb = () => {}) => {
    * @returns any
    */
   function finalize(state) {
-    const isObject = typeof state === 'object';
     // 基线条件，为非对象时，直接返回结果，不需处理。
-    if (!isObject) return state;
+    if (!isObject(state)) return state;
     // 如果在copies中有值，说明被修改过，那么直接返回修改过的这个值，否则继续执行
     if (copies.has(state)) {
       // 因为是map数据结构，以对象作为key值，所以如果改对象下的等于或大于两个值的时候，实际上只会修改到一个值。
