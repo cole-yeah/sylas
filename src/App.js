@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Router from './router';
 import history from './common/utils/history';
 import { produce } from 'lib/immer';
-
-// const cloneDeep = target => {
-//   return {
-//     ...target,
-//   };
-// };
+import Detail from 'pages/prod/Detail';
 
 function App() {
   const [state, setState] = useState({
@@ -21,15 +16,6 @@ function App() {
     },
     c: 3,
   });
-
-  useEffect(() => {
-    // const newState = produce(obj, draft => {
-    //   // debugger;
-    //   draft.a.aa.aaa = draft.a.aa.aaa + 1;
-    // });
-    // // setState(newState);
-    // console.log('xxxxxxxxxxxxx', newState)
-  }, []);
 
   const handleClick = () => {
     const newState = produce(state, draft => {
@@ -67,6 +53,7 @@ function App() {
       >
         点击 c +1
       </div>
+      <Detail />
       <Router history={history} />
     </div>
   );
