@@ -103,8 +103,12 @@ module.exports = function (proxy, allowedHost) {
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy: {
       ...proxy,
-      "/api": {
-        target: "https://m.weilaijichi.cn"
+      "/cnode": {
+        target: "https://cnodejs.org",
+        changeOrigin: true,
+        pathRewrite: {
+          '/cnode': ''
+        }
       }
     },
     before(app, server) {

@@ -1,0 +1,31 @@
+.banner {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url('//i0.hdslb.com/bfs/article/92cd09fac398a7c80dd8fe2f7fd927357b6fd597.jpg');
+  padding: 10vw 10vw;
+  box-sizing: border-box;
+  color: #fff;
+  .h2 {
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .subTitle {
+    font-size: 24px;
+  }
+  .more {
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+
+.list {
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
