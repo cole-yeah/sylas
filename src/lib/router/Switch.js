@@ -11,9 +11,11 @@ const Switch = props => {
     React.Children.forEach(children, child => {
       if (!match && React.isValidElement(child)) {
         element = child;
-        const path = `${basename}${child.props.path}`;
-        match = location.pathname === path;
-        // matchPath(location.pathname, { ...child.props, path });
+        const { exact = false, path: basePath } = child.props;
+        const path = `${basename}${basePath}`;
+        match = exact
+          ? location.pathname === path
+          : location.pathname.includes(path);
       }
     });
     return match
