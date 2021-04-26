@@ -5,9 +5,10 @@
   background-color: #f8f8f8;
   width: 28vw;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   border: 2px solid #ddd;
 }
 .title, .desc {

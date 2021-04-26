@@ -2,7 +2,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  // background-image: url('//i0.hdslb.com/bfs/article/92cd09fac398a7c80dd8fe2f7fd927357b6fd597.jpg');
+  background-image: url('//i0.hdslb.com/bfs/article/92cd09fac398a7c80dd8fe2f7fd927357b6fd597.jpg');
   padding: 10vw 10vw;
   box-sizing: border-box;
   color: #fff;
@@ -23,10 +23,12 @@
 }
 
 .list {
+  margin: -30px 20px 20px;
   padding: 24px;
   box-sizing: border-box;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #fff;
+  border-radius: 4px;
 }

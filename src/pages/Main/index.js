@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import css from './index.module.scss';
 import Card from './components/Card';
+import history from 'common/utils/history';
 
 const ary = [
   {
     title: 'cnode',
     desc: 'Node.js中文社区',
+    path: '/cnode/main',
   },
   {
     title: 'alg',
     desc: '算法题练习',
+    path: '/alg',
   },
   {
     title: '轮子验证',
@@ -18,6 +21,9 @@ const ary = [
 ];
 
 const Main = () => {
+  const handleClick = useCallback(path => {
+    history.push(path);
+  }, []);
   return (
     <div>
       <div className={css.banner}>
@@ -29,7 +35,7 @@ const Main = () => {
       </div>
       <section className={css.list}>
         {ary.map((item, i) => (
-          <Card key={i} {...item} />
+          <Card key={i} {...item} handleClick={handleClick} />
         ))}
       </section>
     </div>
