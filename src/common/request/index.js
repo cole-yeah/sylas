@@ -3,8 +3,8 @@ import compose from './compose';
 
 const GET_METHOD = 'GET';
 const POST_METHOD = 'POST';
-const PUT_METHOD = 'PUT';
-const DELETE_METHOD = 'DELETE';
+// const PUT_METHOD = 'PUT';
+// const DELETE_METHOD = 'DELETE';
 
 const JSON_REQ_TYPE = 'json';
 const FORM_REQ_TYPE = 'form';
@@ -13,6 +13,26 @@ const contentTypeMap = new Map([
   [JSON_REQ_TYPE, 'application/json;charset=UTF-8'],
   [FORM_REQ_TYPE, 'application/x-www-form-urlencoded;charset=UTF-8'],
 ]);
+
+const obj = {
+  create() {
+    const fetchFn = () => {
+      return fetch();
+    };
+    return {
+      get: (url, config) => {},
+      post: (url, params, config) => {},
+      instance: {
+        request: {
+          use: () => {},
+        },
+        response: {
+          use: () => {},
+        },
+      },
+    };
+  },
+};
 
 const baseFetchMiddleware = (ctx, next) => {};
 

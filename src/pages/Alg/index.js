@@ -73,6 +73,77 @@ const Alg = () => {
     console.log('-----', obj.a.aaa.aaaa, obj, newObj, obj === newObj);
   }, []);
 
+  // 0-1000数字中质数
+  // 质数概念 1 不是质数，质数是大于 1 的且只能被 1 和自身整除的自然数
+
+  const fn = index => {
+    let ary = [];
+    let i, j;
+    for (i = 2; i <= index; i++) {
+      for (j = 2; j <= i; j++) {
+        if (i % j === 0) break;
+      }
+      i === j && ary.push(i);
+    }
+    console.log(ary);
+  };
+
+  // 找出数组中和为给定值的两个元素，如：[1, 2, 3, 4, 5] 中找出和为 6 的两个元素。
+  const fn1 = (amount = 6, count) => {
+    const ary = [3, 2, 6, 3, 1, 4, 5];
+    let dataAry = [];
+    for (let i = 0; i < ary.length; i++) {
+      for (let j = i + 1; j < ary.length; j++) {
+        const a = ary[i];
+        const b = ary[j];
+        if (a + b === amount) {
+          dataAry.push([a, b]);
+        }
+      }
+    }
+    return dataAry;
+  };
+
+  // 有点像双指针的操作，计算量比较少，唯一比较多的计算可能就是一开始的排序
+  const fn2 = amount => {
+    let dataAry = [];
+    const ary = [3, 2, 6, 3, 1, 4, 5];
+    const newAry = ary.sort((a, b) => a - b);
+    let left = 0,
+      right = ary.length - 1;
+    while (left <= right) {
+      const leftVal = newAry[left];
+      const rightVal = newAry[right];
+      const sum = leftVal + rightVal;
+      if (sum === amount) {
+        left++;
+        right--;
+        dataAry.push([leftVal, rightVal]);
+      } else if (sum > amount) {
+        right--;
+      } else if (sum < amount) {
+        left++;
+      }
+    }
+    return dataAry;
+  };
+
+  // 扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的。2-10为数字本身，A为1，J为11...大小王可以看成任何数字，可以把它当作0处理
+  const fn3 = ary => {
+    const newAry = [...new Set(ary)].sort((a, b) => a - b);
+    if (newAry.length === 5) {
+      if (newAry[4] - newAry[0] === 4 && newAry[0] !== 0) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    const a = fn(1000);
+    console.log('----xxxxxxxx', fn1(6), fn2(6), fn3([5, 5, 6, 7, 9]));
+  }, []);
+
   // 需要按照 a,b,延迟1秒,c,延迟1秒,d,e, done 的顺序打印
 
   const handleClick = () => {
