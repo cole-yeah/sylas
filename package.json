@@ -1,6 +1,6 @@
 {
   "name": "sylas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
@@ -67,7 +67,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "prepare": "husky install",
-    "lint": "eslint --fix . --ext .js,.jsx src"
+    "lint": "eslint --fix . --ext .js,.jsx src",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -w -r 0"
   },
   "eslintConfig": {
     "extends": [
@@ -150,6 +151,7 @@
     "@commitlint/config-conventional": "^12.1.1",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.3",
+    "conventional-changelog-cli": "^2.1.1",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-react-app": "^6.0.0",
