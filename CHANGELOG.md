@@ -15,6 +15,7 @@
 - 测试 ([6d05f0c](https://github.com/cole-yeah/sylas/commit/6d05f0c2564b60b0dc7b032f3d5a1a2c50ac91a1))
 - 测试 ([a15bbcb](https://github.com/cole-yeah/sylas/commit/a15bbcb11aaa41d9c1e7a96ac4b371e3199a674a))
 - 代码校验 ([90ab0ed](https://github.com/cole-yeah/sylas/commit/90ab0ed403f847b8c82617d078e1338eac7f7315))
+- 新增 changelog；调整版本号 ([5662440](https://github.com/cole-yeah/sylas/commit/56624403f5ea46a158636a1588604ce31d252dd6))
 - **路由:** :sparkles: 新增路由文件 ([a8d496f](https://github.com/cole-yeah/sylas/commit/a8d496f4d70968b1a3ddb8db580f51bd7905f27d))
 - **路由:** 路由增加子路由功能 ([9e85324](https://github.com/cole-yeah/sylas/commit/9e85324ceb476f02e11e3b43bf09c1bccbb4359f))
 - **alg:** 练习 ([c5e552e](https://github.com/cole-yeah/sylas/commit/c5e552e070c9b1c4bc266aec5689435d74c97ca2))
