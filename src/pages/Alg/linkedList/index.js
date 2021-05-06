@@ -98,6 +98,9 @@ class LinkList {
       return current;
     }
   }
+  getHead() {
+    return this.head;
+  }
 }
 
 export default LinkList;

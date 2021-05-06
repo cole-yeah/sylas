@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '../../lib/router';
 import { produce } from 'lib/immer';
+import LinkedList from './linkedList';
 
 // 循环
 const createFlow = effects => {
@@ -193,6 +194,14 @@ const Alg = () => {
     if (n === 1) return 1;
     if (n === 2) return 2;
   };
+
+  useEffect(() => {
+    const link = new LinkedList();
+    link.push(3);
+    link.push(90);
+    link.push('ddd');
+    console.log('xxxxx', link);
+  }, []);
 
   return (
     <div>
