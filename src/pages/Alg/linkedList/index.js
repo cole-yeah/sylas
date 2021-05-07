@@ -1,8 +1,8 @@
-const equalFn = (a, b) => {
+export const equalFn = (a, b) => {
   return a === b;
 };
 
-class Node {
+export class Node {
   constructor(element) {
     this.element = element;
     this.next = undefined;
