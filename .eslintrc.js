@@ -18,6 +18,7 @@ module.exports = {
   rules: {
     'no-unused-vars': 'warn',
     'no-unused-expressions': 'warn',
+    'no-const-assign': 'error',
     'prettier/prettier': ['error', prettierOptions],
   },
   overrides: [

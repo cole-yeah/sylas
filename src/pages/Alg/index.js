@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from '../../lib/router';
-import { produce } from 'lib/immer';
 import LinkedList from './linkedList';
+import Fibonacci from './components/Fibonacci';
+import LinkedListView from './components/LinkedList';
 
 // 循环
 const createFlow = effects => {
@@ -44,10 +44,7 @@ const createFlow = effects => {
 //   };
 // };
 
-var obj = { a: { aa: 1, aaa: { aaaa: 20 } }, b: 2 };
-
 const Alg = () => {
-  const [a, setA] = useState({});
   useEffect(() => {
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -63,15 +60,6 @@ const Alg = () => {
     ]).run(() => {
       console.log('done');
     });
-  }, []);
-
-  useEffect(() => {
-    const newObj = produce(obj, draft => {
-      draft.a.aaa.aaaa = 666;
-      draft.b = 36;
-    });
-
-    console.log('-----', obj.a.aaa.aaaa, obj, newObj, obj === newObj);
   }, []);
 
   // 0-1000数字中质数
@@ -140,60 +128,7 @@ const Alg = () => {
     return false;
   };
 
-  // 0, 1, 1, 2, 3, 5, 8...输入任意位置，得出值
-  // 迭代做法
-  const fn4 = i => {
-    console.time('fn4');
-    if (i === 0) return 0;
-    if (i === 1) return 1;
-    let index = 2;
-    let a = 0,
-      b = 1,
-      c = 0;
-    while (index <= i) {
-      c = a + b;
-      a = b;
-      b = c;
-      index++;
-    }
-    console.timeEnd('fn4');
-    return c;
-  };
-
-  const fn5 = index => {
-    console.time('fn5');
-    const caculate = i => {
-      console.log('----------------', i);
-      if (i === 0) return 0;
-      if (i === 1) return 1;
-      return caculate(i - 2) + caculate(i - 1);
-    };
-    const c = caculate(index);
-    console.timeEnd('fn5');
-    return c;
-  };
-
-  useEffect(() => {
-    const a = fn(1000);
-    console.log('----xxxxxxxx', fn4(10), fn5(10));
-  }, []);
-
   // 需要按照 a,b,延迟1秒,c,延迟1秒,d,e, done 的顺序打印
-
-  const handleClick = () => {
-    const newObj = produce(obj, draft => {
-      draft.b = draft.b + 1;
-    });
-    setA(newObj);
-    console.log('xxxxxxxxxxxx', newObj, obj);
-  };
-
-  // 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）
-  // 斐波那契数列
-  const fn7 = n => {
-    if (n === 1) return 1;
-    if (n === 2) return 2;
-  };
 
   useEffect(() => {
     const link = new LinkedList();
@@ -205,8 +140,8 @@ const Alg = () => {
 
   return (
     <div>
-      <Link to="/main">go to main page</Link>
-      <div onClick={() => handleClick()}>click me {a.b}</div>
+      <Fibonacci />
+      <LinkedListView />
     </div>
   );
 };

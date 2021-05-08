@@ -1,0 +1,18 @@
+.list {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+.listItem {
+  padding: 4px 10px;
+  border-radius: 2px;
+  color: #333;
+  background-color: #eee;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.item {
+  margin-right: 14px;
+}
