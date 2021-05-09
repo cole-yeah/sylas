@@ -16,7 +16,7 @@ const LinkedListView = () => {
 
   const pushEle = () => {
     linkList.push(`val:${count}`);
-    doublyLinkedList.push(`doubly val: ${count}`);
+    doublyLinkedList.insert(`doubly val: ${count}`);
     setCount(prev => prev + 1);
   };
   return (

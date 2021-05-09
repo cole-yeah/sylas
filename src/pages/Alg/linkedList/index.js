@@ -3,9 +3,9 @@ export const equalFn = (a, b) => {
 };
 
 export class Node {
-  constructor(element) {
+  constructor(element, next) {
     this.element = element;
-    this.next = undefined;
+    this.next = next;
   }
 }
 

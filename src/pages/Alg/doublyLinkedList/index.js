@@ -8,9 +8,9 @@ import LinkedList, { Node, equalFn } from '../linkedList';
  */
 
 class DoulyNode extends Node {
-  constructor(element, next, prev) {
+  constructor(element, next) {
     super(element, next);
-    this.prev = prev;
+    this.prev = undefined;
   }
 }
 
@@ -20,7 +20,7 @@ class DoublyLinkedList extends LinkedList {
     this.tail = undefined;
   }
   // 插入节点
-  insert(element, index) {
+  insert(element, index = 0) {
     if (index >= 0 && index <= this.count) {
       const node = new DoulyNode(element);
       let current = this.head;
@@ -30,7 +30,7 @@ class DoublyLinkedList extends LinkedList {
           this.head = node;
           this.tail = node;
         } else {
-          node.next = current;
+          node.next = this.head;
           current.prev = node;
           this.head = node;
         }
@@ -45,10 +45,10 @@ class DoublyLinkedList extends LinkedList {
         // 获取插入位置前一个节点
         const previous = this.getElementAt(index - 1);
         current = previous.next;
-        current.prev = node;
-        previous.next = node;
-        node.prev = previous;
         node.next = current;
+        previous.next = node;
+        current.prev = node;
+        node.prev = previous;
       }
       this.count++;
       return true;
