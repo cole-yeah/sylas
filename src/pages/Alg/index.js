@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LinkedList from './linkedList';
 import Fibonacci from './components/Fibonacci';
 import LinkedListView from './components/LinkedList';
+import StackOnObject from './stack/stackOnObject';
 
 // 循环
 const createFlow = effects => {
@@ -136,6 +137,14 @@ const Alg = () => {
     link.push(90);
     link.push('ddd');
     console.log('xxxxx', link);
+  }, []);
+
+  useEffect(() => {
+    const stack = new StackOnObject();
+    stack.push('2');
+    stack.push('009');
+    stack.items = { ddd: 2222 };
+    console.log('111111111', stack);
   }, []);
 
   return (
