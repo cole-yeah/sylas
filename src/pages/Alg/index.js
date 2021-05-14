@@ -147,6 +147,32 @@ const Alg = () => {
     console.log('111111111', stack);
   }, []);
 
+  // 最短单词解法
+  useEffect(() => {
+    let words = ['practice', 'makes', 'perfect', 'coding', 'makes'];
+    function fn(a, b) {
+      let i0 = -1,
+        i1 = -1;
+      for (let i = 0; i < words.length; i++) {
+        let item = words[i];
+        if (i0 !== -1 && i1 !== -1) {
+          break;
+        }
+        if (item === a && i0 === -1) {
+          i0 = i;
+          continue;
+        }
+        if (item === b && i1 === -1) {
+          i1 = i;
+          continue;
+        }
+      }
+      const val = i0 > i1 ? i0 - i1 : i1 - i0;
+      return val - 1;
+    }
+    fn('makes', 'coding');
+  }, []);
+
   return (
     <div>
       <Fibonacci />
