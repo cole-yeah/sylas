@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LinkedList from './linkedList';
 import Fibonacci from './components/Fibonacci';
 import LinkedListView from './components/LinkedList';
+import TreeView from './components/Tree';
 import StackOnObject from './stack/stackOnObject';
 
 // 循环
@@ -177,6 +178,7 @@ const Alg = () => {
     <div>
       <Fibonacci />
       <LinkedListView />
+      <TreeView />
     </div>
   );
 };
