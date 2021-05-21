@@ -138,7 +138,36 @@ class SearchTree {
     return current;
   }
   // 删除树中某个值
-  remove() {}
+  remove(key) {
+    this.removeNode(this.root, key);
+  }
+  //
+  removeNode(node, key) {
+    if (node == null) return null;
+    // 没有叶节点，直接删除
+    if (node.left == null && node.right == null) {
+      node = null;
+      return node;
+    }
+    // 有右节点
+    if (node.left == null) {
+      node = node.right;
+      return node;
+      // 左节点有值
+    } else if (node.right == null) {
+      node = node.left;
+      return node;
+      // 如果左右子节点都有值
+    } else {
+      // 获取右子节点下的最小值
+      const aux = this.minNode(node.right, key);
+      // 把右子节点最小的值更新到当前要删除的节点位置
+      node.key = aux.key;
+      // 因为节点已经更换位置，所以要再把右子节点最小值删除，这里的node.right相当于是root，以这个为起始
+      node.right = this.removeNode(node.right, aux.key);
+      return node;
+    }
+  }
 }
 
 export default SearchTree;
