@@ -61,7 +61,22 @@ class SearchTree {
     }
   }
   // 在树种查找一个键，如果节点存在，则返回true，否则返回false
-  search() {}
+  search(key) {
+    return this.searchNode(this.root, key);
+  }
+  //
+  searchNode(node, key) {
+    if (node == null) {
+      return false;
+    }
+    if (this.compareFn(key, node.key) === Compare.LESS_THAT) {
+      this.searchNode(node.left, key);
+    } else if (this.compareFn(key, node.key)) {
+      this.searchNode(node.right, key);
+    } else {
+      return true;
+    }
+  }
   // 通过中序遍历方式遍历所有节点
   inOrderTraverse(callback) {
     this.inOrderTraverseNode(this.root, callback);
