@@ -9,3 +9,7 @@ export const defaultCompare = (a, b) => {
   }
   return a < b ? Compare.LESS_THAT : Compare.BIGGER_THAN;
 };
+
+export const swap = (array, i, j) => {
+  [array[i], array[j]] = [array[j], array[i]];
+};

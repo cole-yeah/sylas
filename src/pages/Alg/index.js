@@ -3,6 +3,7 @@ import LinkedList from './linkedList';
 import Fibonacci from './components/Fibonacci';
 import LinkedListView from './components/LinkedList';
 import TreeView from './components/Tree';
+import SortView from './components/Sort';
 import StackOnObject from './stack/stackOnObject';
 
 // 循环
@@ -179,6 +180,7 @@ const Alg = () => {
       <Fibonacci />
       <LinkedListView />
       <TreeView />
+      <SortView />
     </div>
   );
 };
