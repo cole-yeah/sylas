@@ -4,6 +4,7 @@ import Fibonacci from './components/Fibonacci';
 import LinkedListView from './components/LinkedList';
 import TreeView from './components/Tree';
 import SortView from './components/Sort';
+import Dynamic from './components/Dynamic';
 import StackOnObject from './stack/stackOnObject';
 
 // 循环
@@ -181,6 +182,7 @@ const Alg = () => {
       <LinkedListView />
       <TreeView />
       <SortView />
+      <Dynamic />
     </div>
   );
 };

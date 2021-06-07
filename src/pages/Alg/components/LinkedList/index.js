@@ -21,7 +21,7 @@ const LinkedListView = () => {
   };
   return (
     <div className="baseCard">
-      <div className="baseCard">
+      <div className="p20">
         <div className="baseBtn" onClick={pushEle}>
           下一个添加元素: {count}
         </div>

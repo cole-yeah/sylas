@@ -16,7 +16,7 @@ const useLog = () => {
         {!!logs?.length &&
           logs.map((itemArgs, i) => {
             return (
-              <div className={css.listItem}>
+              <div className={css.listItem} key={i}>
                 {itemArgs.map(item => {
                   item = safeJsonString(item);
                   return <div className={css.item}>{item}</div>;

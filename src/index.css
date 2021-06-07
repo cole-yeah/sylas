@@ -20,6 +20,9 @@ code {
 .baseSiler {
   width: 30%;
 }
+.p20 {
+  padding: 20px;
+}
 
 .baseBtn {
   border-radius: 4px;
