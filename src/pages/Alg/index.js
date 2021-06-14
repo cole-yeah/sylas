@@ -5,6 +5,7 @@ import LinkedListView from './components/LinkedList';
 import TreeView from './components/Tree';
 import SortView from './components/Sort';
 import Dynamic from './components/Dynamic';
+import RenderChild from './components/RenderChild';
 import StackOnObject from './stack/stackOnObject';
 
 // 循环
@@ -183,6 +184,7 @@ const Alg = () => {
       <TreeView />
       <SortView />
       <Dynamic />
+      <RenderChild />
     </div>
   );
 };
