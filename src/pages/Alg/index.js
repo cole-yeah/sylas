@@ -135,47 +135,47 @@ const Alg = () => {
 
   // 需要按照 a,b,延迟1秒,c,延迟1秒,d,e, done 的顺序打印
 
-  useEffect(() => {
-    const link = new LinkedList();
-    link.push(3);
-    link.push(90);
-    link.push('ddd');
-    console.log('xxxxx', link);
-  }, []);
+  // useEffect(() => {
+  //   const link = new LinkedList();
+  //   link.push(3);
+  //   link.push(90);
+  //   link.push('ddd');
+  //   console.log('xxxxx', link);
+  // }, []);
 
-  useEffect(() => {
-    const stack = new StackOnObject();
-    stack.push('2');
-    stack.push('009');
-    stack.items = { ddd: 2222 };
-    console.log('111111111', stack);
-  }, []);
+  // useEffect(() => {
+  //   const stack = new StackOnObject();
+  //   stack.push('2');
+  //   stack.push('009');
+  //   stack.items = { ddd: 2222 };
+  //   console.log('111111111', stack);
+  // }, []);
 
   // 最短单词解法
-  useEffect(() => {
-    let words = ['practice', 'makes', 'perfect', 'coding', 'makes'];
-    function fn(a, b) {
-      let i0 = -1,
-        i1 = -1;
-      for (let i = 0; i < words.length; i++) {
-        let item = words[i];
-        if (i0 !== -1 && i1 !== -1) {
-          break;
-        }
-        if (item === a && i0 === -1) {
-          i0 = i;
-          continue;
-        }
-        if (item === b && i1 === -1) {
-          i1 = i;
-          continue;
-        }
-      }
-      const val = i0 > i1 ? i0 - i1 : i1 - i0;
-      return val - 1;
-    }
-    fn('makes', 'coding');
-  }, []);
+  // useEffect(() => {
+  //   let words = ['practice', 'makes', 'perfect', 'coding', 'makes'];
+  //   function fn(a, b) {
+  //     let i0 = -1,
+  //       i1 = -1;
+  //     for (let i = 0; i < words.length; i++) {
+  //       let item = words[i];
+  //       if (i0 !== -1 && i1 !== -1) {
+  //         break;
+  //       }
+  //       if (item === a && i0 === -1) {
+  //         i0 = i;
+  //         continue;
+  //       }
+  //       if (item === b && i1 === -1) {
+  //         i1 = i;
+  //         continue;
+  //       }
+  //     }
+  //     const val = i0 > i1 ? i0 - i1 : i1 - i0;
+  //     return val - 1;
+  //   }
+  //   fn('makes', 'coding');
+  // }, []);
 
   return (
     <div>

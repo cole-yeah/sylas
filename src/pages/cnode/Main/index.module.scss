@@ -1,0 +1,23 @@
+.wrapper {
+  height: 300px;
+  overflow-y: auto;
+}
+.scrollList {
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.scrollList > li {
+  list-style-type:none
+}
+.item {
+  color: #333;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 16;
+  // position: absolute;
+}
+
+.itemActive {
+  background-color: rgb(94, 136, 134);
+}
