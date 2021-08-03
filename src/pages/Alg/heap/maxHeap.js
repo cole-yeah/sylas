@@ -20,11 +20,12 @@ const compare = (a, b) => {
   return a < b === IS_A_LESS_THAN_B;
 };
 
-// const swap = () =>
-
 class MaxHeap {
   constructor() {
     this.heap = [];
+  }
+  getSize() {
+    return this.heap.length;
   }
   swap(pIndex, index) {
     [this.heap[pIndex], this.heap[index]] = [
@@ -42,19 +43,65 @@ class MaxHeap {
   getParentIndex(index) {
     return index >> 1;
   }
-  shiftUp(index) {}
-  insert(value) {
-    this.heap.push(value);
-    // 当前插入节点的下标
-    const index = this.heap.length;
+  // 上移操作
+  shiftUp(index) {
+    if (index === 0) return;
     // 获取父节点下标
     const parentIndex = this.getParentIndex(index);
+    const value = this.heap[index];
     const parentValue = this.heap[parentIndex];
     if (compare(parentValue, value) === IS_A_LESS_THAN_B) {
       this.swap(parentIndex, index);
-      this.insert();
+      this.shiftUp(parentIndex);
     }
+  }
+  insert(value) {
+    this.heap.push(value);
+    const index = this.heap.length - 1;
+    this.shiftUp(index);
+  }
+  shiftDown(index) {
+    let dummyIndex = index;
+    const size = this.getSize();
+    const leftIndex = this.getLeftIndex(index);
+    const rightIndex = this.getRightIndex(index);
+    const indexAry = [index, leftIndex, rightIndex];
+    // 下标如果超过heap长度，直接返回
+    if (indexAry.some(i => i > size)) return;
+    // 取值，判断大小
+    const value = this.heap[index];
+    const leftValue = this.heap[leftIndex];
+    const rightValue = this.heap[rightIndex];
+    if (compare(value, leftValue) === IS_A_LESS_THAN_B) {
+      index = leftIndex;
+    } else if (compare(value, rightValue) === IS_A_LESS_THAN_B) {
+      index = rightIndex;
+    }
+    if (dummyIndex !== index) {
+      this.swap(dummyIndex, index);
+      this.shiftDown(index);
+    }
+  }
+  // 取出最大值
+  pop() {
+    const size = this.getSize();
+    if (size === 0) return undefined;
+    if (size === 1) {
+      return this.heap.shift();
+    }
+    const maxValue = this.heap[0];
+    // 将最子级节点移到根节点
+    this.heap[0] = this.heap.pop();
+    // 对最大二叉堆进行重新排序
+    this.shiftDown(0);
+    return maxValue;
   }
 }
 
-// const heap = new MaxHeap();
+const h = new MaxHeap();
+h.insert(2);
+h.insert(5);
+h.insert(4);
+h.insert(1);
+
+h.pop();
