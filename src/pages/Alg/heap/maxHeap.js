@@ -69,12 +69,14 @@ class MaxHeap {
     // 下标如果超过heap长度，直接返回
     if (indexAry.some(i => i > size)) return;
     // 取值，判断大小
-    const value = this.heap[index];
+    // let value = this.heap[index];
     const leftValue = this.heap[leftIndex];
     const rightValue = this.heap[rightIndex];
-    if (compare(value, leftValue) === IS_A_LESS_THAN_B) {
+    if (compare(this.heap[index], leftValue) === IS_A_LESS_THAN_B) {
       index = leftIndex;
-    } else if (compare(value, rightValue) === IS_A_LESS_THAN_B) {
+    }
+    // 这里之前使用了else if，会导致要么只有右边匹配或者左边子节点匹配
+    if (compare(this.heap[index], rightValue) === IS_A_LESS_THAN_B) {
       index = rightIndex;
     }
     if (dummyIndex !== index) {
@@ -99,9 +101,19 @@ class MaxHeap {
 }
 
 const h = new MaxHeap();
-h.insert(2);
-h.insert(5);
-h.insert(4);
-h.insert(1);
-
-h.pop();
+let ary = [3, 2, 3, 1, 2, 4, 5, 5, 6];
+// [3, 2, 1, 5, 6, 4];
+let k = 4;
+// 2;
+// [3,2,1,5,6,4], 2 --> 5
+// [7,6,5,4,3,2,1], 5 --> 3
+// [3,2,3,1,2,4,5,5,6], 4 --> 2
+ary.forEach(item => {
+  h.insert(item);
+});
+let index = 1;
+while (index < k) {
+  index++;
+  h.pop();
+}
+console.log('xxxxxxxxxx', h);
