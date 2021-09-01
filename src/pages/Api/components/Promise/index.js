@@ -64,11 +64,9 @@ const handleCallback = (callback, status, result) => {
   try {
     // 判断onFulfilled/onRejected是否是函数。如果是，以它们的返回值，作为下一个promise的result.
     if (status === FULFILLED) {
-      isFunction(onFulfilled)
-        ? resolve(onFulfilled(result))
-        : onFulfilled(result);
+      isFunction(onFulfilled) ? resolve(onFulfilled(result)) : resolve(result);
     } else if (status === REJECTED) {
-      isFunction(onRejected) ? reject(onRejected(result)) : onRejected(result);
+      isFunction(onRejected) ? reject(onRejected(result)) : reject(result);
     }
   } catch (err) {
     reject(err);

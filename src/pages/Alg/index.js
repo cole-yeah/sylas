@@ -7,6 +7,7 @@ import SortView from './components/Sort';
 import Dynamic from './components/Dynamic';
 import RenderChild from './components/RenderChild';
 import StackOnObject from './stack/stackOnObject';
+import Hooks from './components/Hooks';
 
 // 循环
 const createFlow = effects => {
@@ -179,12 +180,13 @@ const Alg = () => {
 
   return (
     <div>
-      <Fibonacci />
+      {/* <Fibonacci />
       <LinkedListView />
       <TreeView />
       <SortView />
       <Dynamic />
-      <RenderChild />
+      <RenderChild /> */}
+      <Hooks />
     </div>
   );
 };
