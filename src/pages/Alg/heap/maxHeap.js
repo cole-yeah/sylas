@@ -108,12 +108,37 @@ let k = 4;
 // [3,2,1,5,6,4], 2 --> 5
 // [7,6,5,4,3,2,1], 5 --> 3
 // [3,2,3,1,2,4,5,5,6], 4 --> 2
-ary.forEach(item => {
-  h.insert(item);
-});
-let index = 1;
-while (index < k) {
-  index++;
-  h.pop();
-}
+// ary.forEach(item => {
+//   h.insert(item);
+// });
+// let index = 1;
+// while (index < k) {
+//   index++;
+//   h.pop();
+// }
 console.log('xxxxxxxxxx', h);
+
+const corpFlightBookings = (bookings, n) => {
+  let res = Array(n).fill(0);
+  for (let booking of bookings) {
+    const [first, last, seats] = booking;
+    const index = first - 1;
+    res[index] += seats;
+    if (last < n) {
+      res[last] -= seats;
+    }
+  }
+  for (let i = 1; i < n; i++) {
+    res[i] += res[i - 1];
+  }
+  return res;
+};
+
+corpFlightBookings(
+  [
+    [1, 2, 10],
+    [2, 3, 20],
+    [2, 5, 25],
+  ],
+  5,
+);

@@ -12,3 +12,7 @@ const bubbleSort = ary => {
     }
   }
 };
+
+let arr = [2, 10, 3, 4, 7, 1, 8, 6, 9, 5];
+
+bubbleSort(arr);
