@@ -12,7 +12,7 @@ export const quickSort = array => {
   return array;
 };
 
-const quick = (array, left, right, compareFn = defaultCompare) => {
+const quick = (array, left, right) => {
   const index = partition(array, left, right);
   if (array.length > 1) {
     // 如果子数组存在较小值元素，重复过程进行排序
