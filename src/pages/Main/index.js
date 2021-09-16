@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import css from './index.module.scss';
 import Card from './components/Card';
 import history from 'common/utils/history';
+import { List } from './components/List';
 
 const ary = [
   {
@@ -38,6 +39,7 @@ const Main = () => {
           <Card key={i} {...item} handleClick={handleClick} />
         ))}
       </section>
+      <List />
     </div>
   );
 };
