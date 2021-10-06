@@ -58,6 +58,13 @@ const DChildComponent = () => {
   return <div>D Child Component</div>;
 };
 
+// outsite
+const OutsiteComponent = memo(() => {
+  console.log('outsite component render');
+  return <div>outsite component</div>;
+});
+
+// RenderChild
 const RenderChild = () => {
   const [count, setCount] = useState(0);
   const AComponet = () => {
@@ -73,6 +80,10 @@ const RenderChild = () => {
     console.log('B render');
     return <div>B Component</div>;
   };
+  const BComponentWithCallback = useCallback(() => {
+    console.log('B with callback render');
+    return <div>B Component</div>;
+  }, []);
   const CComponent = useMemo(() => {
     console.log('C render');
     return <div>C Component</div>;
@@ -96,10 +107,12 @@ const RenderChild = () => {
       count: {count}
       <AComponet />
       {BComponent()}
+      {BComponentWithCallback()}
       {CComponent}
       <DComponent />
       <ClassCount />
       <FuncCount />
+      <OutsiteComponent />
     </div>
   );
 };

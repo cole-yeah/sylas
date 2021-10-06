@@ -3,6 +3,7 @@ import css from './index.module.scss';
 import Card from './components/Card';
 import history from 'common/utils/history';
 import { List } from './components/List';
+import Comp from './components/Component';
 
 const ary = [
   {
@@ -40,6 +41,7 @@ const Main = () => {
         ))}
       </section>
       <List />
+      <Comp />
     </div>
   );
 };

@@ -45,8 +45,12 @@ export const List = () => {
           transform: `translateY(${startIndex * itemHeight}px)`,
         }}
       >
-        {rList.map(item => {
-          return <div className={css.item}>虚拟列表 -- {item}</div>;
+        {rList.map((item, i) => {
+          return (
+            <div key={i} className={css.item}>
+              虚拟列表 -- {item}
+            </div>
+          );
         })}
       </div>
     </div>

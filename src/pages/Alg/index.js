@@ -184,9 +184,9 @@ const Alg = () => {
       <LinkedListView />
       <TreeView />
       <SortView />
-      <Dynamic />
-      <RenderChild /> */}
-      <Hooks />
+      <Dynamic /> */}
+      <RenderChild />
+      {/* <Hooks /> */}
     </div>
   );
 };
