@@ -4,6 +4,7 @@ import Card from './components/Card';
 import history from 'common/utils/history';
 import { List } from './components/List';
 import Comp from './components/Component';
+import Carousel from './components/Carousel';
 
 const ary = [
   {
@@ -42,6 +43,7 @@ const Main = () => {
       </section>
       <List />
       <Comp />
+      <Carousel list={[1, 2, 3, 4]} />
     </div>
   );
 };
