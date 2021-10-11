@@ -1,0 +1,8 @@
+stages:
+  - build
+
+build-code-job:
+  stage: build
+  script:
+    - 'curl -X POST -F token=c483fe927300c6c034d93d41a91ffd -F ref=gl-build https://gitlab.com/api/v4/projects/30344222/trigger/pipeline'
+    - npm run build
