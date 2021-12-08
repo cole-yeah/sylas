@@ -5,6 +5,7 @@ import history from 'common/utils/history';
 import { List } from './components/List';
 import Comp from './components/Component';
 import Carousel from './components/Carousel';
+// import usePromise from '../Promise/usePromise';
 
 const ary = [
   {

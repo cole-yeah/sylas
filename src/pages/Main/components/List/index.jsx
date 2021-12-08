@@ -17,7 +17,7 @@ const random = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const RANGE = 50;
+const RANGE = 100;
 let KEY = 0;
 
 export const List = () => {
@@ -69,7 +69,7 @@ export const List = () => {
     setLoading(false);
     const { data } = res;
     setList(prevList => prevList.concat(data));
-    setRList(prevList => prevList.concat(data));
+    isInit && setRList(data);
   }, []);
 
   useEffect(() => {

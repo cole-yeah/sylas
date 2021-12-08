@@ -99,11 +99,14 @@ const RenderChild = () => {
     );
   });
   useEffect(() => {
-    console.log('xxxxxxxxxxxx', count);
     return () => console.log('clear function');
   }, [count]);
+  const handleCount = e => {
+    console.log('xxxxxxxx', e);
+    setCount(count + 1);
+  };
   return (
-    <div onClick={() => setCount(count + 1)}>
+    <div onClick={handleCount} dataContent={{ A: 1, b: 22 }}>
       count: {count}
       <AComponet />
       {BComponent()}

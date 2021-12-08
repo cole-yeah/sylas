@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, useEffect } from 'react';
 
 /**
  * render 需要满足的条件
@@ -22,6 +22,15 @@ const Child = () => {
 const Parent = ({ children }) => {
   const [num, setNum] = useState(0);
   console.log('parent component render');
+  const jump = () => {
+    window.history.pushState(null, null, '/sylas/aaa');
+    window.history.back();
+  };
+  useEffect(() => {
+    window.addEventListener('popstate', e => {
+      console.log('xxxxxxxxx', e);
+    });
+  }, []);
   return (
     <div>
       <button onClick={() => setNum(prev => prev + 1)}>click me</button>
@@ -29,6 +38,7 @@ const Parent = ({ children }) => {
       {/* {children} */}
       {/* <Child /> */}
       {Child()}
+      <div onClick={() => jump()}>click me to jump </div>
     </div>
   );
 };

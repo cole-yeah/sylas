@@ -8,6 +8,7 @@ import Dynamic from './components/Dynamic';
 import RenderChild from './components/RenderChild';
 import StackOnObject from './stack/stackOnObject';
 import Hooks from './components/Hooks';
+import FlatView from './components/Flat';
 
 // 循环
 const createFlow = effects => {
@@ -187,6 +188,7 @@ const Alg = () => {
       <Dynamic /> */}
       <RenderChild />
       {/* <Hooks /> */}
+      <FlatView />
     </div>
   );
 };
