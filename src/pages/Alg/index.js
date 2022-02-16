@@ -181,11 +181,11 @@ const Alg = () => {
 
   return (
     <div>
-      {/* <Fibonacci />
+      <Fibonacci />
       <LinkedListView />
       <TreeView />
       <SortView />
-      <Dynamic /> */}
+      <Dynamic />
       <RenderChild />
       {/* <Hooks /> */}
       <FlatView />

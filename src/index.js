@@ -12,6 +12,11 @@ ReactDOM.render(
   </React.StrictMode>,
   rootElement,
 );
+// ReactDOM.createRoot(rootElement).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+// );
 
 // ReactDOM.createRoot(rootElement).render(
 //   <React.StrictMode>
