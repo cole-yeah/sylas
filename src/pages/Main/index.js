@@ -29,22 +29,22 @@ const Main = () => {
     history.push(path);
   }, []);
   return (
-    <div>
-      <div className={css.banner}>
+    <div style={{ background: '#eee' }}>
+      {/* <div className={css.banner}>
         <h2 className={css.h2}>Sylas</h2>
         <p className={css.subTitle}>
           解脱者·塞拉斯，是MOBA竞技网游《英雄联盟》中第143位登场的英雄角色
         </p>
         <p className={css.more}>更多介绍...</p>
-      </div>
-      <section className={css.list}>
+      </div> */}
+      {/* <section className={css.list}>
         {ary.map((item, i) => (
           <Card key={i} {...item} handleClick={handleClick} />
         ))}
-      </section>
+      </section> */}
       <List />
-      <Comp />
-      <Carousel list={[1, 2, 3, 4]} />
+      {/* <Comp />
+      <Carousel list={[1, 2, 3, 4]} /> */}
     </div>
   );
 };
