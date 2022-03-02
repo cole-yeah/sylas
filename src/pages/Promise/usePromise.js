@@ -9,7 +9,7 @@ const promiseLimit = (promises, limit = 3) => {
     if (index >= promises.length) {
       return Promise.resolve();
     }
-    const p = promises[index++]();
+    const p = promises[index++](index);
     // 当前promise插入数组内
     res.push(p);
     pending.push(p);
@@ -29,19 +29,47 @@ const promiseLimit = (promises, limit = 3) => {
   return enqueue().then(() => Promise.all(res));
 };
 
-const fakePromise = () => {
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const fakePromise = index => {
   return new Promise(resolve => {
     setTimeout(() => {
-      const num = Math.random();
-      resolve(num);
-    }, 2000);
+      console.log('xxxxxxxxxxxxxxxxxxxxx====', index);
+      resolve(index);
+    }, random(1, 3) * 500);
   });
 };
 
-const arr = Array.from({ length: 20 }).map(() => fakePromise);
+const arr = Array.from({ length: 20 }).map((_, i) => fakePromise);
 
-promiseLimit(arr, 3).then(res => {
+// promiseLimit(arr, 3).then(res => {
+//   console.log('xxxxxxxxxxxxx', res);
+// });
+
+// es7 写法，不用递归，更优雅些
+const asyncPool = async (limit, promiseFns) => {
+  let running = [];
+  let ret = [];
+  let i = 0;
+  for (let fn of promiseFns) {
+    const p = fn(i++);
+    ret.push(p);
+    // 只有限制条件小于数组长度时，才需要
+    if (limit <= promiseFns.length) {
+      p.then(() => {
+        const index = running.indexOf(p);
+        running.splice(index, 1);
+      });
+      running.push(p);
+      if (running.length >= limit) {
+        // 这个是关键啊！递归变遍历全靠这个！！牛逼
+        await Promise.race(running);
+      }
+    }
+  }
+  return Promise.all(ret);
+};
+
+asyncPool(4, arr).then(res => {
   console.log('xxxxxxxxxxxxx', res);
 });
-
-// console.log('xxxxxx', );

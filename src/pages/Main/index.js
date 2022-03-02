@@ -11,7 +11,7 @@ import history from 'common/utils/history';
 import { List } from './components/List';
 import Comp from './components/Component';
 import Carousel from './components/Carousel';
-// import usePromise from '../Promise/usePromise';
+import usePromise from '../Promise/usePromise';
 
 const ary = [
   {
@@ -110,12 +110,12 @@ const Main = () => {
         {ary.map((item, i) => (
           <Card key={i} {...item} handleClick={handleClick} />
         ))}
-      </section>
-      {/* <List />
-      <Comp />
-      <Carousel list={[1, 2, 3, 4]} /> */}
-      {/* <EffectView count={count} /> */}
-      {/* <ClassView /> */}
+      </section> */}
+      <List />
+      {/* <Comp />
+      <Carousel list={[1, 2, 3, 4]} />
+      <EffectView count={count} />
+      <ClassView /> */}
     </div>
   );
 };
