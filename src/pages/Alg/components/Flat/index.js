@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './index.module.scss';
+import css from './index.module.less';
 
 const ary = [1, [2, 3], 4, [5, [6, [7]], 8], 9];
 

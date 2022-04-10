@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import css from './index.module.scss';
+import css from './index.module.less';
 
 // const list = Array.from({ length: 10000 }, (_, i) => {
 //   return i;

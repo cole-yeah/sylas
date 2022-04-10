@@ -50,9 +50,8 @@ const arr = Array.from({ length: 20 }).map((_, i) => fakePromise);
 const asyncPool = async (limit, promiseFns) => {
   let running = [];
   let ret = [];
-  let i = 0;
   for (let fn of promiseFns) {
-    const p = fn(i++);
+    const p = fn();
     ret.push(p);
     // 只有限制条件小于数组长度时，才需要
     if (limit <= promiseFns.length) {
@@ -73,3 +72,15 @@ const asyncPool = async (limit, promiseFns) => {
 asyncPool(4, arr).then(res => {
   console.log('xxxxxxxxxxxxx', res);
 });
+
+Promise.selfAll = promises => {
+  let count = 0;
+  let res = [];
+  for (let p of promises) {
+    Promise.resolve(p).then(data => {
+      res.push();
+    });
+  }
+  return Promise.resolve(res);
+  // return new Promise()
+};

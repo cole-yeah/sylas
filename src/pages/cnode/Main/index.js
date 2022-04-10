@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import cnodeService from 'common/service/cnode';
-import css from './index.module.scss';
+import css from './index.module.less';
 
 function stole(arr) {
   let dp = Array(arr.length).fill(0);

@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './index.module.scss';
+import css from './index.module.less';
 
 const Card = ({ title, desc, path, handleClick = () => {} }) => {
   return (

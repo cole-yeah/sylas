@@ -5,7 +5,7 @@ import React, {
   Component,
   useState,
 } from 'react';
-import css from './index.module.scss';
+// import css from './index.module.less';
 import Card from './components/Card';
 import history from 'common/utils/history';
 import { List } from './components/List';
@@ -94,8 +94,15 @@ const Main = () => {
   const handleClick = useCallback(path => {
     history.push(path);
   }, []);
+  useLayoutEffect(() => {
+    console.log('xxxxxxxxxx layout before');
+  }, []);
   useEffect(() => {
+    console.log('xxxxxxxxxx effect');
     setTimeout(() => count++, 5000);
+  }, []);
+  useLayoutEffect(() => {
+    console.log('xxxxxxxxxx layout after');
   }, []);
   return (
     <div style={{ background: '#eee' }}>
@@ -110,12 +117,12 @@ const Main = () => {
         {ary.map((item, i) => (
           <Card key={i} {...item} handleClick={handleClick} />
         ))}
-      </section> */}
+      </section>
+      <Comp />
+      <Carousel list={[1, 2, 3, 4]} /> */}
       <List />
-      {/* <Comp />
-      <Carousel list={[1, 2, 3, 4]} />
-      <EffectView count={count} />
-      <ClassView /> */}
+      {/* <EffectView count={count} /> */}
+      {/* <ClassView /> */}
     </div>
   );
 };

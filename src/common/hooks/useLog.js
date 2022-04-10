@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { safeJsonString } from 'common/utils';
-import css from '../style/index.module.scss';
+import css from '../style/index.module.less';
 
 const useLog = () => {
   const [logs, setLogs] = useState([]);
