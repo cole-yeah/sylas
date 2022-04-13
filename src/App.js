@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Router from './router';
-import history from './common/utils/history';
+import history from '@/common/utils/history';
 
 function App() {
   useEffect(() => {

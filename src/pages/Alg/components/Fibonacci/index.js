@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import useLog from 'common/hooks/useLog';
+import useLog from '@/common/hooks/useLog';
 //斐波那契数列（Fibonacci sequence），又称黄金分割数列
 
 const Fibonacci = () => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import cnodeService from 'common/service/cnode';
+import cnodeService from '@/common/service/cnode';
 import css from './index.module.less';
 
 function stole(arr) {

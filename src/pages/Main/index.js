@@ -7,11 +7,11 @@ import React, {
 } from 'react';
 // import css from './index.module.less';
 import Card from './components/Card';
-import history from 'common/utils/history';
+import history from '@/common/utils/history';
 import { List } from './components/List';
 import Comp from './components/Component';
 import Carousel from './components/Carousel';
-import usePromise from '../Promise/usePromise';
+// import usePromise from '../Promise/usePromise';
 
 const ary = [
   {
@@ -80,7 +80,7 @@ const EffectView = ({ count }) => {
   //     console.log('xxxx layout destory');
   //   };
   // }, []);
-  console.log('xxxxxxxxxxx render~~~~', a, b, c);
+  console.log('xxxxxxxxxxx render~~~~~', a, b, c);
   return (
     <>
       <div onClick={handleClickAsync}>effect async view</div>

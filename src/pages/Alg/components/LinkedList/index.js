@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useLog from 'common/hooks/useLog';
+import useLog from '@/common/hooks/useLog';
 import LinkedList from '../../linkedList';
 import DoublyLinkedList from '../../doublyLinkedList';
 

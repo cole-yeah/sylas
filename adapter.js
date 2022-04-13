@@ -1,4 +1,4 @@
-const FakePromise = require('./src/pages/Api/components/Promise/dummy.js');
+const FakePromise = require('@/pages/Api/components/Promise/dummy.js');
 
 const resolved = value => FakePromise.resolve(value);
 const rejected = reason => FakePromise.reject(reason);

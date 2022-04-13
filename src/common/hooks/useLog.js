@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { safeJsonString } from 'common/utils';
+import { safeJsonString } from '@/common/utils';
 import css from '../style/index.module.less';
 
 const useLog = () => {
