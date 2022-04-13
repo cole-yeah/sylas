@@ -89,21 +89,7 @@ const EffectView = ({ count }) => {
   );
 };
 
-let count = 0;
 const Main = () => {
-  const handleClick = useCallback(path => {
-    history.push(path);
-  }, []);
-  useLayoutEffect(() => {
-    console.log('xxxxxxxxxx layout before');
-  }, []);
-  useEffect(() => {
-    console.log('xxxxxxxxxx effect');
-    setTimeout(() => count++, 5000);
-  }, []);
-  useLayoutEffect(() => {
-    console.log('xxxxxxxxxx layout after');
-  }, []);
   return (
     <div style={{ background: '#eee' }}>
       {/* <div className={css.banner}>
