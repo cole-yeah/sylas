@@ -11,6 +11,8 @@ import history from '@/common/utils/history';
 import { List } from './components/List';
 import Comp from './components/Component';
 import Carousel from './components/Carousel';
+import { countState } from '@/recoil/main';
+import { useRecoilState } from 'recoil';
 // import usePromise from '../Promise/usePromise';
 
 const ary = [
@@ -80,7 +82,6 @@ const EffectView = ({ count }) => {
   //     console.log('xxxx layout destory');
   //   };
   // }, []);
-  console.log('xxxxxxxxxxx render~~~~~', a, b, c);
   return (
     <>
       <div onClick={handleClickAsync}>effect async view</div>
@@ -90,6 +91,7 @@ const EffectView = ({ count }) => {
 };
 
 const Main = () => {
+  const [count, setCount] = useRecoilState(countState);
   return (
     <div style={{ background: '#eee' }}>
       {/* <div className={css.banner}>
@@ -109,6 +111,12 @@ const Main = () => {
       <List />
       {/* <EffectView count={count} /> */}
       {/* <ClassView /> */}
+      <div>
+        <p>power by recoil</p>
+        <p>count: {count}</p>
+        <button onClick={() => setCount(prev => prev + 1)}>+</button>
+        <button onClick={() => setCount(prev => prev - 1)}>-</button>
+      </div>
     </div>
   );
 };
