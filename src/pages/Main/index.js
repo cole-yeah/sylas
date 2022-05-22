@@ -13,6 +13,7 @@ import Comp from './components/Component';
 import Carousel from './components/Carousel';
 import { countState } from '@/recoil/main';
 import { useRecoilState } from 'recoil';
+import Reactive from './components/Reactive';
 // import usePromise from '../Promise/usePromise';
 
 const ary = [
@@ -92,6 +93,12 @@ const EffectView = ({ count }) => {
 
 const Main = () => {
   const [count, setCount] = useRecoilState(countState);
+  useEffect(() => {
+    function currying(func, args = []) {
+      let length = func.length;
+      return function (...rest) {};
+    }
+  }, []);
   return (
     <div style={{ background: '#eee' }}>
       {/* <div className={css.banner}>
@@ -117,6 +124,7 @@ const Main = () => {
         <button onClick={() => setCount(prev => prev + 1)}>+</button>
         <button onClick={() => setCount(prev => prev - 1)}>-</button>
       </div>
+      <Reactive />
     </div>
   );
 };
