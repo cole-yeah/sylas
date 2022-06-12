@@ -115,15 +115,15 @@ const Main = () => {
       </section>
       <Comp />
       <Carousel list={[1, 2, 3, 4]} /> */}
-      <List />
+      {/* <List /> */}
       {/* <EffectView count={count} /> */}
       {/* <ClassView /> */}
-      <div>
+      {/* <div>
         <p>power by recoil</p>
         <p>count: {count}</p>
         <button onClick={() => setCount(prev => prev + 1)}>+</button>
         <button onClick={() => setCount(prev => prev - 1)}>-</button>
-      </div>
+      </div> */}
       <Reactive />
     </div>
   );

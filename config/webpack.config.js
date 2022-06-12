@@ -29,6 +29,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const ColeWebpackPlugin = require('../lib/plugins/ColeWebpackPlugin')
 
 const postcssNormalize = require('postcss-normalize');
+const postcssViewport = require('./plugin/postcss-viewport')
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -136,6 +137,7 @@ module.exports = function (webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             postcssNormalize(),
+            postcssViewport(),
           ],
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
         },
@@ -741,7 +743,7 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
-        new ColeWebpackPlugin()
+        // new ColeWebpackPlugin()
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.

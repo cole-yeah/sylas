@@ -108,7 +108,12 @@ export const List = () => {
       >
         {rList.map((item, i) => {
           return (
-            <Item index={i} item={item} getItemBoundary={getItemBoundary} />
+            <Item
+              key={i}
+              index={i}
+              item={item}
+              getItemBoundary={getItemBoundary}
+            />
           );
         })}
         {loading && <div className={css.loadingText}>加载中...</div>}
