@@ -30,6 +30,7 @@ const ColeWebpackPlugin = require('../lib/plugins/ColeWebpackPlugin')
 
 const postcssNormalize = require('postcss-normalize');
 const postcssViewport = require('./plugin/postcss-viewport')
+const babelPluginViewport = require('./plugin/babel-viewport')
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -426,6 +427,11 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
+                  "babel-plugin-styled-components",
+                  babelPluginViewport,
+                  // [
+                  //   './plugin/babel-viewport'
+                  // ],
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve('react-refresh/babel'),
