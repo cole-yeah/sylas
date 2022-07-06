@@ -427,7 +427,7 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
-                  "babel-plugin-styled-components",
+                  // "babel-plugin-styled-components",
                   babelPluginViewport,
                   // [
                   //   './plugin/babel-viewport'

@@ -13,7 +13,6 @@ import Comp from './components/Component';
 import Carousel from './components/Carousel';
 import { countState } from '@/recoil/main';
 import { useRecoilState } from 'recoil';
-import Reactive from './components/Reactive';
 // import usePromise from '../Promise/usePromise';
 
 const ary = [
@@ -115,16 +114,15 @@ const Main = () => {
       </section>
       <Comp />
       <Carousel list={[1, 2, 3, 4]} /> */}
-      {/* <List /> */}
-      {/* <EffectView count={count} /> */}
-      {/* <ClassView /> */}
-      {/* <div>
+      <List />
+      <EffectView count={count} />
+      <ClassView />
+      <div>
         <p>power by recoil</p>
         <p>count: {count}</p>
         <button onClick={() => setCount(prev => prev + 1)}>+</button>
         <button onClick={() => setCount(prev => prev - 1)}>-</button>
-      </div> */}
-      <Reactive />
+      </div>
     </div>
   );
 };
