@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Router from './router';
 import history from '@/common/utils/history';
-import { RecoilRoot } from 'recoil';
 
 function App() {
   useEffect(() => {
@@ -45,9 +44,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <RecoilRoot>
-        <Router history={history} />
-      </RecoilRoot>
+      <Router history={history} />
     </div>
   );
 }
